@@ -1,0 +1,6 @@
+node_modules
+vite-env.d.ts
+vite.config.ts
+/*.json
+/*.md
+/*.env
