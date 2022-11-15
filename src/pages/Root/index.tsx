@@ -1,14 +1,15 @@
 import React from 'react'
 
 import { Outlet } from 'react-router-dom'
+import Layout from '../../layout'
 
 const Root: React.FC = () => {
   return (
-    <div>
-      header
-      <Outlet />
-      footer
-    </div>
+    <>
+      <Layout>
+        <Outlet />
+      </Layout>
+    </>
   )
 }
 
