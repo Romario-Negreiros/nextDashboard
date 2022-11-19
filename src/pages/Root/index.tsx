@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Outlet } from 'react-router-dom'
 import Layout from '../../layout'
 import { ThemeProvider } from 'styled-components'
@@ -8,9 +6,10 @@ import { usePersistedState } from '../../modules/hooks'
 
 import { dark, light } from '../../styles/themes'
 
+import type { FC } from 'react'
 import type { DefaultTheme } from 'styled-components'
 
-const Root: React.FC = () => {
+const Root: FC = () => {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', dark)
 
   const toggleTheme = () => {
