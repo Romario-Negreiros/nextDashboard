@@ -1,15 +1,16 @@
-import React from 'react'
-
 import Header from './Header'
+
+import type { FC } from 'react'
 
 interface Props {
   children: JSX.Element
+  toggleTheme: () => void
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children, toggleTheme }) => {
   return (
     <>
-      <Header />
+      <Header toggleTheme={toggleTheme}/>
       {children}
     </>
   )
