@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { RouterProvider } from 'react-router-dom'
 import { GlobalStyles } from './styles/global'
 
