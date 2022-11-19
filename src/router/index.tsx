@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { createBrowserRouter } from 'react-router-dom'
 
 import { Root, Landing, SignIn, SignUp } from '../pages'
