@@ -1,10 +1,26 @@
-import React from 'react'
+import { Container, Logo, Navigation } from './styles'
 
-const Header: React.FC = () => {
+import type { FC } from 'react'
+
+interface Props {
+  toggleTheme: () => void
+}
+
+const Header: FC<Props> = ({ toggleTheme }) => {
+  const handleClick = () => toggleTheme()
+
   return (
-    <header>
-      mané
-    </header>
+    <Container>
+      <Logo>nextDashboard</Logo>
+
+      <Navigation>
+        <ul>
+          <li>
+            <button onClick={handleClick}>swap theme</button>
+          </li>
+        </ul>
+      </Navigation>
+    </Container>
   )
 }
 
