@@ -1,9 +1,11 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
-type Response<I> = [I, React.Dispatch<React.SetStateAction<I>>]
+import type { Dispatch, SetStateAction } from 'react'
+
+type Response<I> = [I, Dispatch<SetStateAction<I>>]
 
 const usePersistedState = <I>(key: string, initialState: I): Response<I> => {
-  const [state, setState] = React.useState<I>(() => {
+  const [state, setState] = useState<I>(() => {
     const savedState = localStorage.getItem(key)
     if (savedState !== null) {
       return JSON.parse(savedState)
@@ -12,7 +14,7 @@ const usePersistedState = <I>(key: string, initialState: I): Response<I> => {
     }
   })
 
-  React.useEffect(() => {
+  useEffect(() => {
     localStorage.setItem(key, JSON.stringify(state))
   }, [key, state])
 
