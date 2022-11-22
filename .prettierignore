@@ -1,6 +1,7 @@
 node_modules
 vite-env.d.ts
 vite.config.ts
+styled.d.ts
 /*.json
 /*.md
 /*.env
