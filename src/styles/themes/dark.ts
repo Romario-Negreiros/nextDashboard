@@ -3,7 +3,7 @@ import type { DefaultTheme } from 'styled-components'
 const dark: DefaultTheme = {
   title: 'dark',
   bgs: {
-    primary: '#000',
+    primary: ' #1b1818',
     secondary: '#333'
   },
   fonts: {
