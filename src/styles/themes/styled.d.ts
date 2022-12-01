@@ -11,5 +11,18 @@ declare module 'styled-components' {
       primary: string
       secondary: string
     }
+    elements: {
+      red: string
+      orange: string
+      blueish: string
+      green: string
+      yellowish: string
+    }
+    gradients: {
+      top: string
+      right: string
+      bottom: string
+      left: string
+    }
   }
 }
