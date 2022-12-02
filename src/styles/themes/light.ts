@@ -6,7 +6,7 @@ const light: DefaultTheme = {
     primary: '#fff',
     secondary: '#f5f5f5'
   },
-  fonts: {
+  contrasts: {
     primary: '#000',
     secondary: '#333'
   },

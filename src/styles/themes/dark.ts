@@ -6,7 +6,7 @@ const dark: DefaultTheme = {
     primary: ' #1b1818',
     secondary: '#333'
   },
-  fonts: {
+  contrasts: {
     primary: '#fff',
     secondary: '#c3c3c3'
   },

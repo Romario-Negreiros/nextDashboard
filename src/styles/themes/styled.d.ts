@@ -7,7 +7,7 @@ declare module 'styled-components' {
       primary: string
       secondary: string
     }
-    fonts: {
+    contrasts: {
       primary: string
       secondary: string
     }

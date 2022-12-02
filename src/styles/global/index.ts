@@ -10,4 +10,7 @@ export const GlobalStyles = createGlobalStyle`
   html {
     font-size: 10px;
   }
+  body {
+    background-color: ${({ theme: { bgs } }) => bgs.secondary};
+  }
 `
