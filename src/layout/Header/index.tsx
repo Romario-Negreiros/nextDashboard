@@ -1,4 +1,4 @@
-import { Container, Logo, Navigation } from './styles'
+import { Container, Logo, Navigation, BurguerMenu } from './styles'
 
 import type { FC } from 'react'
 
@@ -7,17 +7,21 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ toggleTheme }) => {
-  const handleClick = () => toggleTheme()
-
   return (
     <Container>
-      <Logo>nextDashboard</Logo>
+      <Logo>
+        next<span>Dashboard</span>
+      </Logo>
 
+      <BurguerMenu>
+        <span></span>
+        <span></span>
+        <span></span>
+      </BurguerMenu>
       <Navigation>
         <ul>
-          <li>
-            <button onClick={handleClick}>swap theme</button>
-          </li>
+          <li>Sign in</li>
+          <li>Sign up</li>
         </ul>
       </Navigation>
     </Container>
