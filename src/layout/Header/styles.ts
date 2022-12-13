@@ -1,11 +1,15 @@
 import styled from 'styled-components'
 
+interface NavigationProps {
+  isMenuOpen: boolean
+}
+
 export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 7rem;
-  padding: 1rem;
+  padding: clamp(1.5rem, 1.5vw, 2rem);
   background-color: ${({ theme: { bgs } }) => bgs.primary};
   border-color: ${({ theme: { contrasts } }) => contrasts.secondary};
 `
@@ -18,14 +22,17 @@ export const Logo = styled.h1`
   }
 `
 
-export const Navigation = styled.nav`
+export const Navigation = styled.nav<NavigationProps>`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
-  height: 100vh;
+  transform: translateY(-50rem);
+  border-bottom: 0.5rem solid ${({ theme: { elements } }) => elements.blueish};
+  background-color: ${({ theme: { bgs } }) => bgs.secondary};
+  ${({ isMenuOpen }) => (isMenuOpen ? 'transform: translateY(0)' : '')};
   ul {
-    background-color: ${({ theme: { bgs } }) => bgs.secondary};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,28 +40,38 @@ export const Navigation = styled.nav`
     gap: 2rem;
     padding: 2rem;
     list-style: none;
-  } li {
+  }
+  li {
     width: 100%;
     text-align: center;
     padding: 2rem;
     color: ${({ theme: { contrasts } }) => contrasts.primary};
     font-size: clamp(1.4rem, 1.4vw, 2.2rem);
-    transition: background-color 0.6s;
     cursor: pointer;
     @media screen and (min-width: 768px) {
       :hover {
-        background-color: ${({ theme: { elements } }) => elements.blueish}; 
+        background-color: ${({ theme: { elements } }) => elements.blueish};
       }
     }
   }
 `
 
 export const BurguerMenu = styled.div`
+  z-index: 2;
+  @media screen and (min-width: 576px) {
+    display: none;
+  }
   span {
     display: block;
     margin-bottom: 0.5rem;
-    color: ${({ theme: { bgs } }) => bgs.primary};
-    width: 1rem;
+    background-color: ${({ theme: { elements } }) => elements.yellowish};
+    width: 2rem;
     height: 0.2rem;
+  }
+  .active:nth-child(1) {
+    transform: translate(0, 2px) rotate(45deg);
+  }
+  .active:nth-child(2) {
+    transform: translate(0, -5px) rotate(135deg);
   }
 `
