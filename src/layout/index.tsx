@@ -4,13 +4,12 @@ import type { FC } from 'react'
 
 interface Props {
   children: JSX.Element
-  toggleTheme: () => void
 }
 
-const Layout: FC<Props> = ({ children, toggleTheme }) => {
+const Layout: FC<Props> = ({ children }) => {
   return (
     <>
-      <Header toggleTheme={toggleTheme}/>
+      <Header />
       {children}
     </>
   )

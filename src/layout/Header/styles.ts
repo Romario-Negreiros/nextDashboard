@@ -10,15 +10,20 @@ export const Container = styled.header`
   align-items: center;
   height: 7rem;
   padding: clamp(1.5rem, 1.5vw, 2rem);
-  background-color: ${({ theme: { bgs } }) => bgs.primary};
-  border-color: ${({ theme: { contrasts } }) => contrasts.secondary};
+  background-color: ${({ theme: { bgs } }) => bgs.secondary};
+  border-bottom: 0.1rem solid ${({ theme: { elements } }) => elements.blueish};
+  section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
 `
 
 export const Logo = styled.h1`
   color: ${({ theme: { contrasts } }) => contrasts.primary};
   font-size: clamp(1.8rem, 1.8vw, 2.6rem);
   span {
-    color: ${({ theme: { elements } }) => elements.yellowish};
+    color: ${({ theme: { elements } }) => elements.red};
   }
 `
 
@@ -63,7 +68,7 @@ export const Navigation = styled.nav<NavigationProps>`
       cursor: pointer;
       padding: 0.5rem 1rem;
       :hover {
-        color: ${({ theme: { elements } }) => elements.yellowish};
+        color: ${({ theme: { elements } }) => elements.red};
       }
     }
   }
@@ -71,13 +76,15 @@ export const Navigation = styled.nav<NavigationProps>`
 
 export const BurguerMenu = styled.div`
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   @media screen and (min-width: 576px) {
     display: none;
   }
   span {
     display: block;
-    margin-bottom: 0.5rem;
-    background-color: ${({ theme: { elements } }) => elements.yellowish};
+    background-color: ${({ theme: { elements } }) => elements.red};
     width: 2rem;
     height: 0.2rem;
     transition: transform 0.6s;

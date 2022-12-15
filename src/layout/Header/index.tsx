@@ -1,15 +1,10 @@
 import { useState } from 'react'
 
 import { Container, Logo, Navigation, BurguerMenu } from './styles'
-import { HeaderThemeSwitcher } from '../../components'
 
 import type { FC } from 'react'
 
-interface Props {
-  toggleTheme: () => void
-}
-
-const Header: FC<Props> = ({ toggleTheme }) => {
+const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleMenuClick = () => setIsMenuOpen(!isMenuOpen)
@@ -19,8 +14,6 @@ const Header: FC<Props> = ({ toggleTheme }) => {
       <Logo>
         next<span>Dashboard</span>
       </Logo>
-
-      <HeaderThemeSwitcher toggleTheme={toggleTheme}/>
 
       <BurguerMenu onClick={handleMenuClick}>
         <span className={isMenuOpen ? 'active' : ''}></span>
