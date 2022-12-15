@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { Container, Logo, Navigation, BurguerMenu } from './styles'
+import { HeaderThemeSwitcher } from '../../components'
 
 import type { FC } from 'react'
 
@@ -19,6 +20,8 @@ const Header: FC<Props> = ({ toggleTheme }) => {
         next<span>Dashboard</span>
       </Logo>
 
+      <HeaderThemeSwitcher toggleTheme={toggleTheme}/>
+
       <BurguerMenu onClick={handleMenuClick}>
         <span className={isMenuOpen ? 'active' : ''}></span>
         <span className={isMenuOpen ? 'active' : ''}></span>
@@ -26,8 +29,12 @@ const Header: FC<Props> = ({ toggleTheme }) => {
       </BurguerMenu>
       <Navigation isMenuOpen={isMenuOpen}>
         <ul>
-          <li onClick={handleMenuClick}>Sign in</li>
-          <li onClick={handleMenuClick}>Sign up</li>
+          <li onClick={handleMenuClick}>
+            <a>Sign in</a>
+          </li>
+          <li onClick={handleMenuClick}>
+            <a>Sign up</a>
+          </li>
         </ul>
       </Navigation>
     </Container>
