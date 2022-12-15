@@ -31,7 +31,15 @@ export const Navigation = styled.nav<NavigationProps>`
   transform: translateY(-50rem);
   border-bottom: 0.5rem solid ${({ theme: { elements } }) => elements.blueish};
   background-color: ${({ theme: { bgs } }) => bgs.secondary};
+  transition: transform 0.6s;
   ${({ isMenuOpen }) => (isMenuOpen ? 'transform: translateY(0)' : '')};
+  @media screen and (min-width: 576px) {
+    transform: translateY(0);
+    position: unset;
+    border-bottom: none;
+    background-color: unset;
+    width: initial;
+  }
   ul {
     display: flex;
     justify-content: center;
@@ -39,18 +47,23 @@ export const Navigation = styled.nav<NavigationProps>`
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
-    list-style: none;
+    @media screen and (min-width: 576px) {
+      flex-direction: row;
+      gap: 0rem;
+      padding: 0;
+    }
   }
   li {
-    width: 100%;
     text-align: center;
     padding: 2rem;
     color: ${({ theme: { contrasts } }) => contrasts.primary};
-    font-size: clamp(1.4rem, 1.4vw, 2.2rem);
-    cursor: pointer;
-    @media screen and (min-width: 768px) {
+    font-size: clamp(1.4rem, 1.4vw, 1.6rem);
+    transition: color 0.6s;
+    @media screen and (min-width: 576px) {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
       :hover {
-        background-color: ${({ theme: { elements } }) => elements.blueish};
+        color: ${({ theme: { elements } }) => elements.yellowish};
       }
     }
   }
@@ -67,6 +80,7 @@ export const BurguerMenu = styled.div`
     background-color: ${({ theme: { elements } }) => elements.yellowish};
     width: 2rem;
     height: 0.2rem;
+    transition: transform 0.6s;
   }
   .active:nth-child(1) {
     transform: translate(0, 2px) rotate(45deg);
