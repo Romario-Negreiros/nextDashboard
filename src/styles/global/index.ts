@@ -6,12 +6,14 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    transition: all 0.6s
   }
   html {
     font-size: 10px;
   }
-  .body-hide {
-
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
   }
 `
