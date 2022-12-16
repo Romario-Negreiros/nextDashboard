@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { Container, Logo, Navigation, BurguerMenu } from './styles'
+import { Link } from 'react-router-dom'
 
 import type { FC } from 'react'
 
@@ -22,12 +23,14 @@ const Header: FC = () => {
       </BurguerMenu>
       <Navigation isMenuOpen={isMenuOpen}>
         <ul>
-          <li onClick={handleMenuClick}>
-            <a>Sign in</a>
+          <li>
+            <Link to="/sign-in" onClick={handleMenuClick}>
+              Sign in
+            </Link>
           </li>
-          <li onClick={handleMenuClick}>
-            <a>Sign up</a>
-          </li>
+          <Link to="/sign-up" onClick={handleMenuClick}>
+            Sign up
+          </Link>
         </ul>
       </Navigation>
     </Container>

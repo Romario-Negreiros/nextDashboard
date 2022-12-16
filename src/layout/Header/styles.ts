@@ -60,10 +60,12 @@ export const Navigation = styled.nav<NavigationProps>`
   }
   li {
     text-align: center;
-    padding: 2rem;
+  }
+  a {
     color: ${({ theme: { contrasts } }) => contrasts.primary};
     font-size: clamp(1.4rem, 1.4vw, 1.6rem);
     transition: color 0.6s;
+    padding: 2rem;
     @media screen and (min-width: 576px) {
       cursor: pointer;
       padding: 0.5rem 1rem;
